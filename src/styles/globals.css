@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Midnight Bauhinia Theme Tokens */
+  :root {
+    --color-rich-black: #0A0A0A;
+    --color-stark-white: #FFFFFF;
+    --color-bauhinia-red: #CC0000;
+    --color-stone-gray: #78716C;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: var(--color-rich-black);
+    color: var(--color-stark-white);
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  /* Grain overlay effect */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+@layer utilities {
+  .text-bauhinia {
+    color: var(--color-bauhinia-red);
+  }
+  
+  .text-stone {
+    color: var(--color-stone-gray);
+  }
+  
+  .bg-rich-black {
+    background-color: var(--color-rich-black);
+  }
+  
+  .border-stark {
+    border-color: var(--color-stark-white);
+  }
+  
+  .glow-red {
+    text-shadow: 0 0 20px var(--color-bauhinia-red), 0 0 40px var(--color-bauhinia-red);
+  }
+  
+  .box-shadow-red {
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+  }
+}
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans+HK:wght@700;900&display=swap');
