@@ -71,11 +71,21 @@
   }
 }
 
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans+HK:wght@700;900&display=swap');
 
 .snap-section {
   min-height: 100vh;
+  min-height: 100svh;
+}
+
+@media (max-width: 767px) {
+  .snap-section {
+    min-height: auto;
+  }
+
+  /* Keep the page-wide glow cheap on phones */
+  .neon-drift, .neon-drift-alt {
+    animation: none;
+  }
 }
 
 /* Slow drifting background glow */

@@ -7,7 +7,7 @@ export function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
 
   return (
-    <section ref={ref} className="snap-section flex items-center justify-center px-6 relative overflow-hidden">
+    <section ref={ref} className="snap-section min-h-[100svh] flex items-center justify-center px-6 relative overflow-hidden">
       {/* Background Image, fading out into the page below */}
       <div
         className="absolute inset-0 overflow-hidden"
@@ -28,7 +28,7 @@ export function Hero() {
 
       {/* Soft blur band over the fade */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-64 backdrop-blur-md pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-40 md:h-64 backdrop-blur-sm md:backdrop-blur-md pointer-events-none"
         style={{
           maskImage: "linear-gradient(to bottom, transparent, black 70%)",
           WebkitMaskImage: "linear-gradient(to bottom, transparent, black 70%)",
@@ -53,11 +53,11 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <h2 className="text-6xl md:text-8xl font-black tracking-tight mb-6">
+          <h2 className="text-5xl md:text-8xl font-black tracking-tight mb-6">
             WELCOME TO<br />
             <span className="text-bauhinia glow-red">UBC HKSA</span>
           </h2>
-          <p className="text-xl md:text-2xl text-stone max-w-2xl mx-auto font-light">
+          <p className="text-lg md:text-2xl text-stone max-w-2xl mx-auto font-light">
             UBC's most tightknit social club. Where the best events happen
             and lifelong connections are made.
           </p>

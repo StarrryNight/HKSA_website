@@ -105,7 +105,7 @@ export function Perks() {
             transition={{ duration: 0.7 }}
             className="text-center lg:text-left"
           >
-            <div className="text-[9rem] md:text-[13rem] font-black leading-none text-bauhinia glow-red">
+            <div className="text-[7rem] md:text-[13rem] font-black leading-none text-bauhinia glow-red">
               $<CountUp to={PRICE} />
             </div>
             <p className="text-stone text-sm tracking-widest mt-2">

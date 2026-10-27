@@ -3,7 +3,7 @@ import { Instagram } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="join" className="snap-section flex items-center py-32 px-6 relative overflow-hidden">
+    <section id="join" className="snap-section flex items-center py-20 md:py-32 px-6 relative overflow-hidden">
       {/* Fixed Background Text */}
       <div 
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -28,7 +28,7 @@ export function CTA() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-6xl md:text-8xl font-black tracking-tight mb-6">
+          <h2 className="text-5xl md:text-8xl font-black tracking-tight mb-6">
             {["READY", "TO"].map((word, i) => (
               <motion.span
                 key={word}
@@ -55,7 +55,7 @@ export function CTA() {
               </motion.span>
             ))}
           </h2>
-          <p className="text-2xl text-stone font-light mb-12 max-w-2xl mx-auto">
+          <p className="text-lg md:text-2xl text-stone font-light mb-12 max-w-2xl mx-auto">
             Join UBC's most tightknit student social club. All vibes, no drama.
           </p>
 
@@ -68,7 +68,7 @@ export function CTA() {
               transition={{ boxShadow: { duration: 2.5, repeat: Infinity } }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-16 py-5 border-2 border-bauhinia bg-bauhinia text-white text-xl tracking-widest font-bold hover:bg-transparent hover:text-bauhinia transition-all duration-300 box-shadow-red"
+              className="inline-block px-8 md:px-16 py-4 md:py-5 border-2 border-bauhinia bg-bauhinia text-white text-lg md:text-xl tracking-widest font-bold hover:bg-transparent hover:text-bauhinia transition-all duration-300 box-shadow-red"
             >
               BECOME A MEMBER
             </motion.a>
@@ -78,7 +78,7 @@ export function CTA() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-16 py-5 border-2 border-stark bg-transparent text-white text-xl tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+              className="inline-block px-8 md:px-16 py-4 md:py-5 border-2 border-stark bg-transparent text-white text-lg md:text-xl tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
             >
               BECOME A SPONSOR
             </motion.a>

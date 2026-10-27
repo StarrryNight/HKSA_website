@@ -70,8 +70,8 @@ function Stat({ value, prefix = "", suffix, label }: (typeof stats)[number]) {
 
   return (
     <div ref={ref} className="text-center">
-      <motion.div className="text-5xl md:text-6xl font-black neon-cyan">{text}</motion.div>
-      <p className="text-stone text-xs tracking-widest mt-2">{label}</p>
+      <motion.div className="text-4xl md:text-6xl font-black neon-cyan">{text}</motion.div>
+      <p className="text-stone text-[10px] md:text-xs tracking-widest mt-2">{label}</p>
     </div>
   );
 }
@@ -127,7 +127,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-3 gap-6 mb-20 border-y border-white/10 py-10"
+          className="grid grid-cols-3 gap-3 md:gap-6 mb-12 md:mb-20 border-y border-white/10 py-10"
         >
           {stats.map((stat) => (
             <Stat key={stat.label} {...stat} />

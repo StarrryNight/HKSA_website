@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import Masonry from "react-responsive-masonry";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const galleryImages = [
@@ -132,7 +132,8 @@ export function VibesGallery() {
           </motion.div>
 
           {/* Masonry Grid */}
-          <Masonry columnsCount={3} gutter="20px">
+          <ResponsiveMasonry columnsCountBreakPoints={{ 0: 2, 768: 3 }}>
+          <Masonry gutter="12px">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -163,6 +164,7 @@ export function VibesGallery() {
               </motion.div>
             ))}
           </Masonry>
+          </ResponsiveMasonry>
         </div>
       </section>
     </Dialog>

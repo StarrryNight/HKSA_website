@@ -93,7 +93,7 @@ export function Events() {
         </motion.div>
 
         {/* Events Layout */}
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12">
           {/* Events List */}
           <div className="space-y-1">
             {events.map((event, index) => (
@@ -104,6 +104,7 @@ export function Events() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 onMouseEnter={() => setActiveEvent(event)}
+                onClick={() => setActiveEvent(event)}
                 className={`border-b border-stone/30 py-6 cursor-pointer transition-all duration-300 group ${
                   activeEvent.id === event.id ? 'border-bauhinia' : ''
                 }`}
@@ -139,7 +140,7 @@ export function Events() {
           </div>
 
           {/* Preview Canvas */}
-          <div className="relative h-[600px] border-2 border-stark overflow-hidden">
+          <div className="relative h-[320px] md:h-[600px] border-2 border-stark overflow-hidden order-first md:order-none sticky top-2 md:relative md:top-auto z-20 bg-rich-black">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeEvent.id}
@@ -151,7 +152,7 @@ export function Events() {
               >
                 {activeEvent.prospective ? (
                   <div className="w-full h-full bg-white/5 flex items-center justify-center">
-                    <span className="text-[16rem] font-black leading-none text-[#78716C]/40 select-none">?</span>
+                    <span className="text-[10rem] md:text-[16rem] font-black leading-none text-[#78716C]/40 select-none">?</span>
                   </div>
                 ) : (
                   <img
@@ -163,11 +164,11 @@ export function Events() {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <h3 className="text-4xl font-black tracking-tight mb-4">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
+                  <h3 className="text-2xl md:text-4xl font-black tracking-tight mb-2 md:mb-4">
                     {activeEvent.title}
                   </h3>
-                  <p className="text-stone text-lg mb-3">{activeEvent.description}</p>
+                  <p className="text-stone text-sm md:text-lg mb-3 line-clamp-4 md:line-clamp-none">{activeEvent.description}</p>
                   <div className="flex items-center gap-4 text-sm">
                     {activeEvent.location && (
                       <span className="px-3 py-1 border border-bauhinia text-bauhinia">
