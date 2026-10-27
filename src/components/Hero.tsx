@@ -1,12 +1,18 @@
-import { motion } from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 export function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+    <section ref={ref} className="snap-section flex items-center justify-center px-6 relative overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <motion.div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
+          y: bgY,
           backgroundImage: `url('/hero.webp')`,
           filter: 'brightness(0.3) contrast(1.2)',
         }}

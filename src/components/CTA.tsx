@@ -3,7 +3,7 @@ import { Instagram } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="join" className="py-32 px-6 bg-rich-black relative overflow-hidden">
+    <section id="join" className="snap-section flex items-center py-32 px-6 bg-rich-black relative overflow-hidden">
       {/* Fixed Background Text */}
       <div 
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -19,7 +19,7 @@ export function CTA() {
         UBC HKSA
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl w-full mx-auto relative z-10">
         {/* Main CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -29,8 +29,31 @@ export function CTA() {
           className="text-center mb-16"
         >
           <h2 className="text-6xl md:text-8xl font-black tracking-tight mb-6">
-            READY TO<br />
-            <span className="text-bauhinia glow-red">RUN IT UP?</span>
+            {["READY", "TO"].map((word, i) => (
+              <motion.span
+                key={word}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, duration: 0.5 }}
+                className="inline-block mr-4"
+              >
+                {word}
+              </motion.span>
+            ))}
+            <br />
+            {["RUN", "IT", "UP?"].map((word, i) => (
+              <motion.span
+                key={word}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + i * 0.15, duration: 0.5 }}
+                className="inline-block mr-4 text-bauhinia glow-red"
+              >
+                {word}
+              </motion.span>
+            ))}
           </h2>
           <p className="text-2xl text-stone font-light mb-12 max-w-2xl mx-auto">
             Join UBC's most tightknit student social club. All vibes, no drama.
@@ -40,6 +63,8 @@ export function CTA() {
             href="https://docs.google.com/forms/d/e/1FAIpQLSfdgZ7niLqLQCIyZ858JRY-3IEcxqnfdTHxYrqBgEuV_k1lrg/viewform"
             target="_blank"
             rel="noopener noreferrer"
+            animate={{ boxShadow: ["0 0 0px rgba(204,0,0,0.0)", "0 0 30px rgba(204,0,0,0.6)", "0 0 0px rgba(204,0,0,0.0)"] }}
+            transition={{ boxShadow: { duration: 2.5, repeat: Infinity } }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-16 py-5 border-2 border-bauhinia bg-bauhinia text-white text-xl tracking-widest font-bold hover:bg-transparent hover:text-bauhinia transition-all duration-300 box-shadow-red"

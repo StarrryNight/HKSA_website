@@ -113,7 +113,7 @@ export function VibesGallery() {
           </div>
         </div>
       </DialogContent>
-      <section className="py-24 px-6 bg-rich-black">
+      <section className="snap-section py-24 px-6 bg-rich-black">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <motion.div
@@ -136,10 +136,10 @@ export function VibesGallery() {
             {galleryImages.map((image, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                transition={{ delay: (index % 3) * 0.12, duration: 0.5 }}
                 whileHover={{ scale: 1.02 }}
                 className="relative group cursor-pointer overflow-hidden"
                 onClick={() => setSelectedImage(image)}
