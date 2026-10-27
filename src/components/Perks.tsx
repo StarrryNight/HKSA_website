@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useTransform, animate, useScroll } from "motion/react";
 import { Ticket, CreditCard, Tag } from "lucide-react";
 
-const PRICE = 10;
+const PRICE = 13;
 const VALID_UNTIL = "April 30, 2027";
 
 const perks = [
@@ -60,7 +60,7 @@ export function Perks() {
   return (
     <section
       ref={ref}
-      className="snap-section flex flex-col justify-center py-24 bg-rich-black relative overflow-hidden"
+      className="snap-section flex flex-col justify-center py-24 relative overflow-hidden"
     >
       {/* Parallax background text */}
       <motion.div

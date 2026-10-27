@@ -113,7 +113,7 @@ export function VibesGallery() {
           </div>
         </div>
       </DialogContent>
-      <section className="snap-section py-24 px-6 bg-rich-black">
+      <section className="snap-section py-24 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <motion.div

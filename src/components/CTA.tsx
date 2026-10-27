@@ -3,7 +3,7 @@ import { Instagram } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="join" className="snap-section flex items-center py-32 px-6 bg-rich-black relative overflow-hidden">
+    <section id="join" className="snap-section flex items-center py-32 px-6 relative overflow-hidden">
       {/* Fixed Background Text */}
       <div 
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -59,18 +59,30 @@ export function CTA() {
             Join UBC's most tightknit student social club. All vibes, no drama.
           </p>
 
-          <motion.a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfdgZ7niLqLQCIyZ858JRY-3IEcxqnfdTHxYrqBgEuV_k1lrg/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            animate={{ boxShadow: ["0 0 0px rgba(204,0,0,0.0)", "0 0 30px rgba(204,0,0,0.6)", "0 0 0px rgba(204,0,0,0.0)"] }}
-            transition={{ boxShadow: { duration: 2.5, repeat: Infinity } }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block px-16 py-5 border-2 border-bauhinia bg-bauhinia text-white text-xl tracking-widest font-bold hover:bg-transparent hover:text-bauhinia transition-all duration-300 box-shadow-red"
-          >
-            BECOME A MEMBER
-          </motion.a>
+          <div className="flex flex-wrap justify-center gap-4">
+            <motion.a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfdgZ7niLqLQCIyZ858JRY-3IEcxqnfdTHxYrqBgEuV_k1lrg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              animate={{ boxShadow: ["0 0 0px rgba(204,0,0,0.0)", "0 0 30px rgba(204,0,0,0.6)", "0 0 0px rgba(204,0,0,0.0)"] }}
+              transition={{ boxShadow: { duration: 2.5, repeat: Infinity } }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-16 py-5 border-2 border-bauhinia bg-bauhinia text-white text-xl tracking-widest font-bold hover:bg-transparent hover:text-bauhinia transition-all duration-300 box-shadow-red"
+            >
+              BECOME A MEMBER
+            </motion.a>
+            <motion.a
+              href="https://www.instagram.com/ubchksa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-16 py-5 border-2 border-stark bg-transparent text-white text-xl tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+            >
+              BECOME A SPONSOR
+            </motion.a>
+          </div>
         </motion.div>
 
         {/* Contact Methods */}

@@ -17,23 +17,32 @@ type Event = {
 const events: Event[] = ([
   {
     id: 1,
-    title: "JEOPARDY NIGHT",
-    sortDate: "2026-03-12",
-    date: "MAR 12, 2026",
-    time: "5:30PM – 8:30PM (Check-in at 5PM)",
-    location: "AMS Great Hall North",
-    description: "Teams of four, $20 to enter, $100 on the line. Categories, buzzers, and snacks included. Astele Beauty gift cards for the winners who want something extra to show for it.",
-    image: "/jeopardy_game_night.webp",
+    title: "FIRST-YEAR EAT AND GREET",
+    sortDate: "2026-09-25",
+    date: "SEP 25, 2026",
+    time: "4PM – 8PM",
+    description: "A social made for first-years. Good food, card games, and dice on the table, so you can meet people and make UBC feel a little smaller. Sign-up was required.",
+    image: "/first_year_social.webp",
   },
   {
     id: 2,
-    title: "DOUBLES BADMINTON",
-    sortDate: "2026-03-20",
-    date: "MAR 20, 2026",
-    time: "6PM – 9PM",
-    location: "SRC Gym 3",
-    description: "Pairs, not singles. $14 for members, $20 for non-members. No partner? No problem — HKSA will pair you up. Show up ready to swing.",
-    image: "/hit or miss.webp",
+    title: "ICE BREAKER",
+    sortDate: "2026-10-02",
+    date: "OCT 2, 2026",
+    time: "7PM – 9:30PM",
+    location: "Great Hall North",
+    description: "The season's first big night out. Free for members, $8 for everyone else, with prizes from Teadot, Exit (Richmond), and more. Come solo, leave with a new group chat.",
+    image: "/ice_breaker.webp",
+  },
+  {
+    id: 7,
+    title: "MATCHA MAHJONG",
+    sortDate: "2026-10-23",
+    date: "OCT 23, 2026",
+    time: "6:30PM – 9PM",
+    location: "Great Hall North",
+    description: "Matcha drinks meet mahjong tables, together with the UBC Mahjong Club. Matcha from Matcha Made, free for members and $6 for non-members. No experience needed to sit down and play.",
+    image: "/matcha_mahjong_2026.webp",
   },
   {
     id: 3,
@@ -65,7 +74,7 @@ export function Events() {
   const [activeEvent, setActiveEvent] = useState<Event>(events[0]);
 
   return (
-    <section className="snap-section py-24 px-6 bg-rich-black">
+    <section className="snap-section py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div

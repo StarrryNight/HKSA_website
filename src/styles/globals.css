@@ -74,15 +74,18 @@
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans+HK:wght@700;900&display=swap');
 
-/* Soft section snapping */
-html {
-  scroll-snap-type: y proximity;
-}
-
 .snap-section {
-  scroll-snap-align: start;
   min-height: 100vh;
 }
+
+/* Slow drifting background glow */
+@keyframes neon-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(40px, 30px); }
+}
+
+.neon-drift { animation: neon-drift 18s ease-in-out infinite; }
+.neon-drift-alt { animation: neon-drift 24s ease-in-out infinite reverse; }
 
 /* Sponsor marquee */
 @keyframes marquee {
@@ -99,6 +102,59 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-snap-type: none; }
-  .marquee-track { animation: none; }
+  .marquee-track, .neon-drift, .neon-drift-alt { animation: none; }
+}
+
+/* Hong Kong neon signage */
+.neon-red {
+  color: #ffe9e9;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 12px #ff2a2a,
+    0 0 28px #ff2a2a,
+    0 0 56px #cc0000,
+    0 0 90px #cc0000;
+}
+
+.neon-cyan {
+  color: #e6fdff;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 12px #00e5ff,
+    0 0 28px #00e5ff,
+    0 0 56px #00b8d4;
+}
+
+.neon-pink {
+  color: #ffe6f4;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 12px #ff3fa4,
+    0 0 28px #ff3fa4,
+    0 0 56px #d6007f;
+}
+
+.neon-box {
+  border: 2px solid #ff2a2a;
+  box-shadow:
+    0 0 6px #ff2a2a,
+    0 0 20px rgba(255, 42, 42, 0.7),
+    inset 0 0 12px rgba(255, 42, 42, 0.5);
+}
+
+@keyframes neon-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.35; }
+}
+
+.neon-flicker {
+  animation: neon-flicker 5s infinite;
+}
+
+.neon-flicker-slow {
+  animation: neon-flicker 8s infinite 1.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-flicker, .neon-flicker-slow { animation: none; }
 }
