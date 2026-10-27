@@ -8,18 +8,32 @@ export function Hero() {
 
   return (
     <section ref={ref} className="snap-section flex items-center justify-center px-6 relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      <motion.div 
-        className="absolute inset-0 bg-cover bg-center"
+      {/* Background Image, fading out into the page below */}
+      <div
+        className="absolute inset-0 overflow-hidden"
         style={{
-          y: bgY,
-          backgroundImage: `url('/hero.webp')`,
-          filter: 'brightness(0.3) contrast(1.2)',
+          maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+        }}
+      >
+        <motion.div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            y: bgY,
+            backgroundImage: `url('/hero.webp')`,
+            filter: 'brightness(0.3) contrast(1.2)',
+          }}
+        />
+      </div>
+
+      {/* Soft blur band over the fade */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-64 backdrop-blur-md pointer-events-none"
+        style={{
+          maskImage: "linear-gradient(to bottom, transparent, black 70%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent, black 70%)",
         }}
       />
-      
-      {/* Fade into the next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-rich-black pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
