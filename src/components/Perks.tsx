@@ -20,7 +20,7 @@ const perks = [
     category: "DISCOUNTS",
     icon: Tag,
     title: "Member Deals",
-    deal: "Fantuan, MYST Asian Bistro, Soju Sunday, 101 Boba, Astele Beauty and Wellness, and more",
+    deal: "MYST, Drive Motorsports, A. Bento, Taiwan Bento, Eatery, Molly Tea, 101 Boba, Bak'd, and more",
     color: "#CC0000",
   },
   {

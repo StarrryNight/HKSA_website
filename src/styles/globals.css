@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Tailwind v4 gates hover: behind (hover: hover), which some Windows touch laptops fail; apply it everywhere. */
+@custom-variant hover (&:hover);
+
 @layer base {
   /* Midnight Bauhinia Theme Tokens */
   :root {

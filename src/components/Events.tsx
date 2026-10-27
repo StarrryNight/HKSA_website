@@ -10,7 +10,7 @@ const events = [
     time: "5:30PM – 8:30PM (Check-in at 5PM)",
     location: "AMS Great Hall North",
     description: "Teams of four, $20 to enter, $100 on the line. Categories, buzzers, and snacks included. Astele Beauty gift cards for the winners who want something extra to show for it.",
-    image: "/jeopardy_game_night.png",
+    image: "/jeopardy_game_night.webp",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const events = [
     time: "6PM – 9PM",
     location: "SRC Gym 3",
     description: "Pairs, not singles. $14 for members, $20 for non-members. No partner? No problem — HKSA will pair you up. Show up ready to swing.",
-    image: "/hit or miss.png",
+    image: "/hit or miss.webp",
   },
 ];
 

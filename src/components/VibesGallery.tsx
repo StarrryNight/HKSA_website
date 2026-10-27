@@ -5,72 +5,72 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const galleryImages = [
   {
-    url: "/external.jpg",
-    popupUrl: "/external_popup.JPG",
+    url: "/external.webp",
+    popupUrl: "/external_popup.webp",
     caption: "EXTERNAL ICE BREAKER",
     date: "SEP 26, 2025",
     type: "external",
     description: "HKSA opened the doors at Life Building 2202 for the first social of the year, no membership required. New faces, name tags, and two hours to figure out who was worth keeping in contact with. Free for members, $8 for everyone else — cheap for what you got out of it. Most left with a group chat invite.",
   },
   {
-    url: "/matcha_mahjong.JPG",
-    popupUrl: "/matcha_popup.png",
+    url: "/matcha_mahjong.webp",
+    popupUrl: "/matcha_popup.webp",
     caption: "MATCHA MAHJONG",
     date: "NOV 7, 2025",
     type: "external",
     description: "HKSA brought a full matcha pop-up into Great Hall North and paired it with a mahjong crash course that filled up fast. Iced lattes in banana, blueberry, and strawberry, hojicha in maple brown sugar, madeleines on the side — $6.50 while they lasted. Free for members, $5 for everyone else. The tiles stayed out until 8:30.",
   },
   {
-    url: "/Fortune.png",
-    popupUrl: "/fortune_popup.png",
+    url: "/Fortune.webp",
+    popupUrl: "/fortune_popup.webp",
     caption: "LK FORTUNE",
     date: "NOV 7, 2025",
     type: "external",
     description: "Same night, different energy. After the matcha and mahjong wrapped, HKSA moved the party to Fortune Sound Club on E Pender. $10 to get in before 11, one of Vancouver's best rooms, and a crowd that was already warmed up. Nobody was thinking about mahjong anymore.",
   },
   {
-    url: "/Smash%20Or%20PAss..JPG",
-    popupUrl: "/smah_or_pass_popup.JPG",
+    url: "/Smash%20Or%20PAss..webp",
+    popupUrl: "/smah_or_pass_popup.webp",
     caption: "SMASH OR PASS",
     date: "OCT 24, 2025",
     type: "external",
     description: "HKSA took over UBC Rec North with two courts, ten teams, and three hours of volleyball that got competitive fast. $8 for members, prizes on the line, and no excuses for sitting out — HKSA paired up anyone who didn't have a full squad. The courts closed at 9. The bragging rights lasted longer.",
   },
   {
-    url: "/Desert%20Date%20Night.png",
-    popupUrl: "/ddn_popup.JPG",
+    url: "/Desert%20Date%20Night.webp",
+    popupUrl: "/ddn_popup.webp",
     caption: "DESERT DATE NIGHT",
     date: "FEB 13, 2026",
     type: "external",
     description: "HKSA packed LIFE 2302 for its biggest speed dating night of the year, complete with free desserts, BIGWAY goodie bags, and $50 Astele Beauty gift cards for the first ten sign-ups. The rounds flew by fast. Some left with a number, a few with plans for the 14th.",
   },
   {
-    url: "/rush_hour.jpg",
-    popupUrl: "/rush_hour_popup.jpg",
+    url: "/rush_hour.webp",
+    popupUrl: "/rush_hour_popup.webp",
     caption: "RUSH HOUR",
     date: "NOV 21, 2025",
     type: "external",
     description: "Five clubs. One night. CVC, HKSA, CSA, Japan, and Taiwan brought the biggest campus collab of the year to The Pit UBC on November 21st — a 19+ night running 9:30 to 2AM. All genres, custom themed drinks, and a room that didn't need much convincing. Early birds already knew. Everyone else found out the hard way.",
   },
   {
-    url: "/GingerHouse.JPG",
-    popupUrl: "/ginger_popup.JPG",
+    url: "/GingerHouse.webp",
+    popupUrl: "/ginger_popup.webp",
     caption: "GINGER HOUSE",
     date: "DEC 1, 2025",
     type: "external",
     description: "HKSA turned Nest 2311 into a gingerbread battleground. Teams of four, hot cocoa in hand, competing for the best house and whatever prizes were worth fighting over. $5 to get in, three hours to build, and a surprising amount of pressure for something made of frosting.",
   },
   {
-    url: "/Potluck.JPG",
-    popupUrl: "/potluck_popup.png",
+    url: "/Potluck.webp",
+    popupUrl: "/potluck_popup.webp",
     caption: "HKSA POTLUCK",
     date: "2025",
     type: "internal",
     description: "Everyone brought something, nobody left hungry. The kind of afternoon where the food was good but the company was better — plates piled high, space packed tight, and a room full of people who didn't need a reason to stay longer than planned.",
   },
   {
-    url: "/retreat.png",
-    popupUrl: "/retreat_popup.JPG",
+    url: "/retreat.webp",
+    popupUrl: "/retreat_popup.webp",
     caption: "HKSA INTERNAL RETREAT",
     date: "NOV 9–10, 2025",
     type: "internal",
@@ -148,6 +148,8 @@ export function VibesGallery() {
                   src={image.url}
                   alt={image.caption}
                   className="w-full h-auto block"
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     filter: 'brightness(0.82)',
                     borderRadius: '0px'
