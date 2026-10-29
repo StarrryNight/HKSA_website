@@ -14,7 +14,7 @@ Content is data arrays at the top of each component:
 - `Events.tsx`: `events`, each with `sortDate` (ISO, used for sorting) and optional `prospective: true`
 - `Perks.tsx`: `PRICE`, `VALID_UNTIL`, `perks`, `sponsors`
 - `VibesGallery.tsx`: `galleryImages` (last season's photos)
-- `src/links.ts`: `MEMBERSHIP_URL` (Showpass) and `SPONSOR_URL` (mailto draft to pr.ubc.hksa@gmail.com), used by `CTA.tsx` and `About.tsx`
+- `src/links.ts`: `MEMBERSHIP_URL` (Showpass) and `SPONSOR_EMAIL`, plus Gmail-compose and mailto URLs. `SponsorButton.tsx` opens a dialog with copy-email, Open in Gmail and mail-app options; it is used by `CTA.tsx` and `About.tsx`
 
 ## Conventions
 - **Events**: sorted chronologically. Past events have an `image` and show white titles. `prospective: true` events show greyed titles and a giant "?" banner (no descriptions anymore), so they need no image.
@@ -23,7 +23,7 @@ Content is data arrays at the top of each component:
 - **Look**: HK neon theme. A fixed page-wide glow lives in `App.tsx`, so sections must stay transparent (no `bg-rich-black` on sections). Neon helpers (`neon-red`, `neon-cyan`, `neon-pink`, `neon-box`, `neon-flicker`) are in `src/styles/globals.css`.
 - **Scroll**: scroll-snap was tried and removed because it jumped on tall sections. Don't re-add without testing.
 - **Animation**: each section has its own entrance animation, and motion effects respect `prefers-reduced-motion`.
-- Buttons: "BECOME A MEMBER" and "BECOME A SPONSOR" in `CTA.tsx`, plus "BECOME A SPONSOR" next to "OUR STORY". All sponsor buttons open an email draft.
+- Buttons: "BECOME A MEMBER" and "BECOME A SPONSOR" in `CTA.tsx`, plus "BECOME A SPONSOR" next to "OUR STORY". All sponsor buttons open the `SponsorButton` dialog.
 
 ## Open items
 - Confirm the sponsor email address (`@gmail.com` was assumed)

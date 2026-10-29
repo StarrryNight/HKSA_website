@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion, useTransform, useInView, useMotionValue, animate } from "motion/react";
-import { SPONSOR_URL } from "../links";
+import { SponsorButton } from "./SponsorButton";
 
 
 const history = [
@@ -138,14 +138,9 @@ export function About() {
           <div>
             <div className="flex items-center justify-between gap-4 mb-8">
               <p className="text-stone text-xs tracking-widest">OUR STORY</p>
-              <motion.a
-                href={SPONSOR_URL}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-5 py-2 border-2 border-bauhinia text-bauhinia text-xs tracking-widest font-bold hover:bg-bauhinia hover:text-white transition-all duration-300"
-              >
+              <SponsorButton className="px-5 py-2 border-2 border-bauhinia text-bauhinia text-xs tracking-widest font-bold hover:bg-bauhinia hover:text-white transition-all duration-300">
                 BECOME A SPONSOR
-              </motion.a>
+              </SponsorButton>
             </div>
             <div className="relative pl-10">
               <div className="absolute left-[7px] top-0 bottom-0 w-px bg-white/15" />

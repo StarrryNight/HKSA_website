@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Instagram } from "lucide-react";
-import { MEMBERSHIP_URL, SPONSOR_URL } from "../links";
+import { MEMBERSHIP_URL } from "../links";
+import { SponsorButton } from "./SponsorButton";
 
 export function CTA() {
   return (
@@ -101,14 +102,9 @@ export function CTA() {
                 Put your brand in front of one of UBC's biggest social clubs. Real publicity, real students, all year long.
               </p>
             </div>
-            <motion.a
-              href={SPONSOR_URL}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block w-full md:w-auto px-8 md:px-12 py-4 border-2 border-stark bg-transparent text-white text-lg tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
-            >
+            <SponsorButton className="inline-block w-full md:w-auto px-8 md:px-12 py-4 border-2 border-stark bg-transparent text-white text-lg tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300">
               BECOME A SPONSOR
-            </motion.a>
+            </SponsorButton>
           </motion.div>
         </div>
 
