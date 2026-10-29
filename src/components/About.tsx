@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useTransform, useInView, useMotionValue, animate } from "motion/react";
+import { SPONSOR_URL } from "../links";
 
-// No sponsor form exists yet, so this points at HKSA's Instagram. Swap in a form or email when ready.
-const SPONSOR_URL = "https://www.instagram.com/ubchksa/";
 
 const history = [
   {
@@ -141,8 +140,6 @@ export function About() {
               <p className="text-stone text-xs tracking-widest">OUR STORY</p>
               <motion.a
                 href={SPONSOR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-5 py-2 border-2 border-bauhinia text-bauhinia text-xs tracking-widest font-bold hover:bg-bauhinia hover:text-white transition-all duration-300"

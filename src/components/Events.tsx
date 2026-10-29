@@ -9,7 +9,6 @@ type Event = {
   date: string;
   time?: string;
   location?: string;
-  description: string;
   image?: string;
   prospective?: boolean;
 };
@@ -21,7 +20,6 @@ const events: Event[] = ([
     sortDate: "2026-09-25",
     date: "SEP 25, 2026",
     time: "4PM – 8PM",
-    description: "A social made for first-years. Good food, card games, and dice on the table, so you can meet people and make UBC feel a little smaller. Sign-up was required.",
     image: "/first_year_social.webp",
   },
   {
@@ -31,7 +29,6 @@ const events: Event[] = ([
     date: "OCT 2, 2026",
     time: "7PM – 9:30PM",
     location: "Great Hall North",
-    description: "The season's first big night out. Free for members, $8 for everyone else, with prizes from Teadot, Exit (Richmond), and more. Come solo, leave with a new group chat.",
     image: "/ice_breaker.webp",
   },
   {
@@ -41,7 +38,6 @@ const events: Event[] = ([
     date: "OCT 23, 2026",
     time: "6:30PM – 9PM",
     location: "Great Hall North",
-    description: "Matcha drinks meet mahjong tables, together with the UBC Mahjong Club. Matcha from Matcha Made, free for members and $6 for non-members. No experience needed to sit down and play.",
     image: "/matcha_mahjong_2026.webp",
   },
   {
@@ -49,7 +45,6 @@ const events: Event[] = ([
     title: "NO NET NOVEMBER",
     sortDate: "2026-11-15",
     date: "NOV 2026",
-    description: "Rules are loose, nets are optional. Expect a month-long challenge and a little friendly competition. Details coming soon.",
     prospective: true,
   },
   {
@@ -57,7 +52,6 @@ const events: Event[] = ([
     title: "SIP AND SLIME",
     sortDate: "2027-01-15",
     date: "JAN 2027",
-    description: "Drinks in one hand, slime in the other. Probably messy, definitely fun. Details coming soon.",
     prospective: true,
   },
   {
@@ -65,7 +59,6 @@ const events: Event[] = ([
     title: "DESERT DATE NIGHT",
     sortDate: "2027-02-12",
     date: "FEB 2027",
-    description: "Date-night energy, whether or not you have a date. Dress up, show up, and save room for dessert. Details coming soon.",
     prospective: true,
   },
 ] as Event[]).sort((a, b) => a.sortDate.localeCompare(b.sortDate));
@@ -168,7 +161,6 @@ export function Events() {
                   <h3 className="text-2xl md:text-4xl font-black tracking-tight mb-2 md:mb-4">
                     {activeEvent.title}
                   </h3>
-                  <p className="text-stone text-sm md:text-lg mb-3 line-clamp-4 md:line-clamp-none">{activeEvent.description}</p>
                   <div className="flex items-center gap-4 text-sm">
                     {activeEvent.location && (
                       <span className="px-3 py-1 border border-bauhinia text-bauhinia">

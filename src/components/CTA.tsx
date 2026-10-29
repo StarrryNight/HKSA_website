@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Instagram } from "lucide-react";
+import { MEMBERSHIP_URL, SPONSOR_URL } from "../links";
 
 export function CTA() {
   return (
@@ -19,7 +20,7 @@ export function CTA() {
         UBC HKSA
       </div>
 
-      <div className="max-w-4xl w-full mx-auto relative z-10">
+      <div className="max-w-5xl w-full mx-auto relative z-10">
         {/* Main CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,7 +29,7 @@ export function CTA() {
           transition={{ duration: 0.8 }}
           className="text-center mb-10 md:mb-8"
         >
-          <h2 className="text-5xl md:text-8xl font-black tracking-tight mb-6">
+          <h2 className="text-5xl md:text-7xl font-black tracking-tight">
             {["READY", "TO"].map((word, i) => (
               <motion.span
                 key={word}
@@ -55,35 +56,61 @@ export function CTA() {
               </motion.span>
             ))}
           </h2>
-          <p className="text-lg md:text-2xl text-stone font-light mb-8 max-w-2xl mx-auto">
-            Join UBC's most tightknit student social club. All vibes, no drama.
-          </p>
+        </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-4">
+        {/* Member + sponsor, side by side */}
+        <div className="grid md:grid-cols-2 gap-6 mb-10 md:mb-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="border-2 border-bauhinia bg-white/5 p-6 md:p-8 flex flex-col items-center justify-between gap-6"
+            style={{ boxShadow: "0 0 24px rgba(204,0,0,0.25)" }}
+          >
+            <div>
+              <p className="text-bauhinia text-xs tracking-widest font-bold mb-3">FOR STUDENTS</p>
+              <p className="text-lg md:text-xl text-stone font-light">
+                Join UBC's most tightknit student social club. All vibes, no drama.
+              </p>
+            </div>
             <motion.a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfdgZ7niLqLQCIyZ858JRY-3IEcxqnfdTHxYrqBgEuV_k1lrg/viewform"
+              href={MEMBERSHIP_URL}
               target="_blank"
               rel="noopener noreferrer"
               animate={{ boxShadow: ["0 0 0px rgba(204,0,0,0.0)", "0 0 30px rgba(204,0,0,0.6)", "0 0 0px rgba(204,0,0,0.0)"] }}
               transition={{ boxShadow: { duration: 2.5, repeat: Infinity } }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 md:px-16 py-4 md:py-5 border-2 border-bauhinia bg-bauhinia text-white text-lg md:text-xl tracking-widest font-bold hover:bg-transparent hover:text-bauhinia transition-all duration-300 box-shadow-red"
+              className="inline-block w-full md:w-auto px-8 md:px-12 py-4 border-2 border-bauhinia bg-bauhinia text-white text-lg tracking-widest font-bold hover:bg-transparent hover:text-bauhinia transition-all duration-300"
             >
               BECOME A MEMBER
             </motion.a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="border-2 border-stark bg-white/5 p-6 md:p-8 flex flex-col items-center justify-between gap-6"
+          >
+            <div>
+              <p className="text-white/60 text-xs tracking-widest font-bold mb-3">FOR BUSINESSES</p>
+              <p className="text-lg md:text-xl text-stone font-light">
+                Put your brand in front of one of UBC's biggest social clubs. Real publicity, real students, all year long.
+              </p>
+            </div>
             <motion.a
-              href="https://www.instagram.com/ubchksa/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={SPONSOR_URL}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 md:px-16 py-4 md:py-5 border-2 border-stark bg-transparent text-white text-lg md:text-xl tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+              className="inline-block w-full md:w-auto px-8 md:px-12 py-4 border-2 border-stark bg-transparent text-white text-lg tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
             >
               BECOME A SPONSOR
             </motion.a>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Contact Methods */}
         <motion.div
