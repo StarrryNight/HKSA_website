@@ -7,7 +7,11 @@ export function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
 
   return (
-    <section ref={ref} className="snap-section min-h-[100svh] flex items-center justify-center px-6 relative overflow-hidden">
+    <section
+      ref={ref}
+      className="flex items-center justify-center px-6 relative overflow-hidden"
+      style={{ minHeight: "100svh" }}
+    >
       {/* Background Image, fading out into the page below */}
       <div
         className="absolute inset-0 overflow-hidden"
@@ -20,8 +24,9 @@ export function Hero() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             y: bgY,
-            backgroundImage: `url('/hero.webp')`,
-            filter: 'brightness(0.3) contrast(1.2)',
+            backgroundImage: `url('/hero_2026.webp')`,
+            backgroundPosition: 'center 65%',
+            filter: 'brightness(0.45) contrast(1.15)',
           }}
         />
       </div>
