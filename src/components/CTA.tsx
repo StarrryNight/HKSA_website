@@ -3,7 +3,7 @@ import { Instagram } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="join" className="snap-section flex items-center py-20 md:py-32 px-6 relative overflow-hidden">
+    <section id="join" className="snap-section flex items-center py-16 md:py-12 px-6 relative overflow-hidden">
       {/* Fixed Background Text */}
       <div 
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -26,7 +26,7 @@ export function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-8"
         >
           <h2 className="text-5xl md:text-8xl font-black tracking-tight mb-6">
             {["READY", "TO"].map((word, i) => (
@@ -55,7 +55,7 @@ export function CTA() {
               </motion.span>
             ))}
           </h2>
-          <p className="text-lg md:text-2xl text-stone font-light mb-12 max-w-2xl mx-auto">
+          <p className="text-lg md:text-2xl text-stone font-light mb-8 max-w-2xl mx-auto">
             Join UBC's most tightknit student social club. All vibes, no drama.
           </p>
 
@@ -91,9 +91,9 @@ export function CTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="border-t border-stark pt-12"
+          className="border-t border-stark pt-8"
         >
-          <p className="text-center text-stone text-sm tracking-widest mb-8">
+          <p className="text-center text-stone text-sm tracking-widest mb-6">
             CONNECT WITH US
           </p>
           
@@ -129,7 +129,7 @@ export function CTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-20 text-center"
+          className="mt-10 text-center"
         >
           <p className="text-stone text-sm">
             © 2026 Hong Kong Student Association, University of British Columbia

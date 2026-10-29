@@ -29,6 +29,7 @@ const galleryImages = [
   {
     url: "/gala.webp",
     caption: "GALA",
+    position: "35% center",
     type: "internal",
     date: "2026",
   },
@@ -88,7 +89,7 @@ const galleryImages = [
   },
 ];
 
-type GalleryImage = { url: string; caption: string; date: string; type: "internal" | "external" };
+type GalleryImage = { url: string; caption: string; date: string; type: "internal" | "external"; position?: string };
 
 function GalleryItem({
   image,
@@ -116,7 +117,7 @@ function GalleryItem({
         className={fill ? "w-full h-full object-cover block" : "w-full h-auto block"}
         loading="lazy"
         decoding="async"
-        style={{ filter: "brightness(0.82)" }}
+        style={{ filter: "brightness(0.82)", objectPosition: image.position }}
       />
       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/70 max-md:bg-black/40 transition-all duration-300 flex items-center justify-center p-2">
         <div className="text-center max-md:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
