@@ -208,9 +208,9 @@ export function About() {
         </div>
 
         {/* Values */}
-        <div className="mt-16">
+        <div className="mt-16 hidden md:block">
           <p className="text-stone text-xs tracking-widest mb-8">WHAT WE STAND FOR</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 [counter-reset:value]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -219,11 +219,11 @@ export function About() {
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: index * 0.12, duration: 0.5 }}
                 whileHover={{ y: -6, boxShadow: "0 0 20px rgba(204, 0, 0, 0.5)" }}
-                className={`border-2 border-stark bg-white/5 p-6 group [counter-increment:value] ${
-                  index === 0 ? "hidden md:block" : ""
-                }`}
+                className="border-2 border-stark bg-white/5 p-6 group"
               >
-                <span className="text-bauhinia text-xs tracking-widest font-bold after:content-[counter(value,decimal-leading-zero)]" />
+                <span className="text-bauhinia text-xs tracking-widest font-bold">
+                  0{index + 1}
+                </span>
                 <h3 className="text-xl font-black italic mt-3 mb-2 group-hover:text-bauhinia transition-colors duration-300">
                   {value.title}
                 </h3>
