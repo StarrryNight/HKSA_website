@@ -67,10 +67,6 @@ export function Hero() {
             WELCOME TO<br />
             <span className="text-bauhinia glow-red">UBC HKSA</span>
           </h2>
-          <p className="text-lg md:text-2xl text-stone max-w-2xl mx-auto font-light">
-            UBC's most tightknit social club. Where the best events happen
-            and lifelong connections are made.
-          </p>
         </motion.div>
 
         {/* CTA Button */}

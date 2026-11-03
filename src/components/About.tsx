@@ -201,7 +201,6 @@ export function About() {
 
         {/* Values */}
         <div className="mt-16 hidden md:block">
-          <p className="text-stone text-xs tracking-widest mb-8">WHAT WE STAND FOR</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <motion.div
