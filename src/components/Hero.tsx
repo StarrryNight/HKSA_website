@@ -1,6 +1,32 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
+// Lazy images and entrance animations shift the layout while a long smooth
+// scroll is in flight, so it can stall or land off-target. Re-aim until settled.
+function scrollToJoin() {
+  const el = document.getElementById("join");
+  if (!el) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const target = () => el.getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({ top: target(), behavior: reduce ? "auto" : "smooth" });
+  let tries = 0;
+  let last = -1;
+  const check = window.setInterval(() => {
+    tries++;
+    const y = window.scrollY;
+    const settled = Math.abs(y - last) < 1; // scroll has stopped moving
+    last = y;
+    if (settled) {
+      if (Math.abs(target() - y) > 4) {
+        window.scrollTo({ top: target(), behavior: "smooth" });
+      } else {
+        window.clearInterval(check);
+      }
+    }
+    if (tries >= 12) window.clearInterval(check);
+  }, 400);
+}
+
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -52,7 +78,9 @@ export function Hero() {
           <img
             src="/hksa_logo.png"
             alt="UBC HKSA"
-            className="h-20 md:h-28 mx-auto"
+            width={323}
+            height={103}
+            className="h-20 md:h-28 w-auto mx-auto"
             style={{ filter: "drop-shadow(0 0 6px rgba(255,42,42,0.9)) drop-shadow(0 0 18px rgba(255,42,42,0.6))" }}
           />
         </motion.div>
@@ -76,7 +104,7 @@ export function Hero() {
           transition={{ delay: 0.6 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => document.getElementById('join')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={scrollToJoin}
           className="mt-12 px-12 py-4 border-2 border-stark bg-transparent text-white text-lg tracking-widest hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
         >
           JOIN US

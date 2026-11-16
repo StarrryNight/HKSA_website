@@ -179,3 +179,7 @@
 @media (prefers-reduced-motion: reduce) {
   .neon-flicker, .neon-flicker-slow { animation: none; }
 }
+
+/* Avoid font-swap layout shift: hidden until fonts are ready (see main.tsx) */
+#root { transition: opacity 0.25s ease; }
+.fonts-loading #root { opacity: 0; }
