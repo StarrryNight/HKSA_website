@@ -5,8 +5,15 @@ import { SponsorButton } from "./SponsorButton";
 
 export function CTA() {
   return (
-    <section id="join" className="snap-section flex items-center pt-16 md:pt-8 px-6 relative overflow-hidden"
-      style={{ minHeight: "100svh", paddingBottom: "max(2rem, env(safe-area-inset-bottom))" }}
+    <section
+      id="join"
+      className="snap-section flex items-center px-6 relative overflow-hidden"
+      style={{
+        height: "100svh",
+        minHeight: "0",
+        paddingTop: "2svh",
+        paddingBottom: "max(2svh, env(safe-area-inset-bottom))",
+      }}
     >
       {/* Fixed Background Text */}
       <div 
@@ -23,16 +30,16 @@ export function CTA() {
         UBC HKSA
       </div>
 
-      <div className="max-w-5xl w-full mx-auto relative z-10">
+      <div className="max-w-5xl w-full mx-auto relative z-10 flex flex-col justify-center" style={{ gap: "3svh" }}>
         {/* Main CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8 md:mb-6"
+          className="text-center"
         >
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight leading-[1.05]">
+          <h2 className="font-black tracking-tight leading-[1.05]" style={{ fontSize: "min(7.5svh, 12vw)" }}>
             {["READY", "TO"].map((word, i) => (
               <motion.span
                 key={word}
@@ -62,18 +69,18 @@ export function CTA() {
         </motion.div>
 
         {/* Member + sponsor, side by side */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8 md:mb-6 text-center">
+        <div className="grid md:grid-cols-2 gap-[2svh] md:gap-6 text-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="border-2 border-bauhinia bg-white/5 p-6 md:p-6 flex flex-col items-center justify-between gap-6"
-            style={{ boxShadow: "0 0 24px rgba(204,0,0,0.25)" }}
+            className="border-2 border-bauhinia bg-white/5 flex flex-col items-center justify-between"
+            style={{ padding: "min(2.5svh, 1.5rem)", gap: "2svh", boxShadow: "0 0 24px rgba(204,0,0,0.25)" }}
           >
             <div>
               <p className="text-bauhinia text-xs tracking-widest font-bold mb-3">FOR STUDENTS</p>
-              <p className="text-lg md:text-xl text-stone font-light">
+              <p className="text-stone font-light" style={{ fontSize: "clamp(0.875rem, 2.2svh, 1.25rem)" }}>
                 Join HKSA for the year. $13 gets you in.
               </p>
             </div>
@@ -85,7 +92,7 @@ export function CTA() {
               transition={{ boxShadow: { duration: 2.5, repeat: Infinity } }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block w-full md:w-auto px-8 md:px-12 py-4 border-2 border-bauhinia bg-bauhinia text-white text-lg tracking-widest font-bold hover:bg-transparent hover:text-bauhinia transition-all duration-300"
+              className="inline-block w-full md:w-auto px-8 md:px-12 py-[1.6svh] text-[clamp(0.875rem,2.2svh,1.125rem)] border-2 border-bauhinia bg-bauhinia text-white tracking-widest font-bold hover:bg-transparent hover:text-bauhinia transition-all duration-300"
             >
               BECOME A MEMBER
             </motion.a>
@@ -96,15 +103,16 @@ export function CTA() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="border-2 border-stark bg-white/5 p-6 md:p-6 flex flex-col items-center justify-between gap-6"
+            className="border-2 border-stark bg-white/5 flex flex-col items-center justify-between"
+            style={{ padding: "min(2.5svh, 1.5rem)", gap: "2svh" }}
           >
             <div>
               <p className="text-white/60 text-xs tracking-widest font-bold mb-3">FOR BUSINESSES</p>
-              <p className="text-lg md:text-xl text-stone font-light">
+              <p className="text-stone font-light" style={{ fontSize: "clamp(0.875rem, 2.2svh, 1.25rem)" }}>
                 Want your business in front of UBC students? Sponsor us and we'll promote you all year.
               </p>
             </div>
-            <SponsorButton className="inline-block w-full md:w-auto px-8 md:px-12 py-4 border-2 border-stark bg-transparent text-white text-lg tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300">
+            <SponsorButton className="inline-block w-full md:w-auto px-8 md:px-12 py-[1.6svh] text-[clamp(0.875rem,2.2svh,1.125rem)] border-2 border-stark bg-transparent text-white tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300">
               BECOME A SPONSOR
             </SponsorButton>
           </motion.div>
@@ -116,9 +124,9 @@ export function CTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="border-t border-stark pt-6"
+          className="border-t border-stark pt-[2svh]"
         >
-          <p className="text-center text-stone text-sm tracking-widest mb-4">
+          <p className="text-center text-stone text-sm tracking-widest mb-[1.5svh]">
             CONNECT WITH US
           </p>
           
@@ -154,7 +162,7 @@ export function CTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-6 text-center"
+          className="text-center"
         >
           <p className="text-stone text-sm">
             © 2026 Hong Kong Student Association, University of British Columbia
