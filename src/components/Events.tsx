@@ -132,7 +132,7 @@ export function Events() {
           </div>
 
           {/* Preview Canvas */}
-          <div className="relative h-[320px] md:h-[600px] border-2 border-stark overflow-hidden order-first md:order-none sticky top-2 md:relative md:top-auto z-20 bg-rich-black">
+          <div className="relative h-[320px] md:h-[600px] border-2 border-stark overflow-hidden order-first md:order-none bg-rich-black">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeEvent.id}
