@@ -7,44 +7,44 @@ const history = [
   {
     year: "2008",
     title: "WHERE IT STARTED",
-    text: "HKSA began at UBC in 2008, a home away from home for Hong Kong students.",
+    text: "HKSA started at UBC in 2008 so Hong Kong students had somewhere to feel at home.",
   },
   {
     year: "2008 – 2025",
     title: "GROWING UP",
-    text: "Over the years we grew in size and expanded from a student association into a full social club, with parties, sports, and competitions all year round.",
+    text: "It stopped being just an association a while ago. Now there are parties, sports and competitions pretty much all year.",
   },
   {
     year: "2026 ONWARDS",
     title: "OPEN TO EVERYONE",
-    text: "Today we're one of UBC's biggest social clubs, with a community built on diversity and a welcome for everyone, whatever your background.",
+    text: "These days anyone can show up, whether you're from Hong Kong or not.",
   },
 ];
 
 // Event photos from src/public, used for the family collage.
 const familyPhotos = [
-  { src: "/retreat.webp", alt: "HKSA internal retreat", rotate: -3 },
-  { src: "/Potluck.webp", alt: "HKSA potluck", rotate: 2 },
   { src: "/family_group.webp", alt: "HKSA members group photo", rotate: 3 },
+  { src: "/Potluck.webp", alt: "HKSA potluck", rotate: 2 },
   { src: "/family_holiday.webp", alt: "HKSA holiday party", rotate: -2, position: "center 62%" },
+  { src: "/retreat_2026.webp", alt: "HKSA internal retreat", rotate: -3 },
 ];
 
 const values = [
   {
     title: "COMMUNITY FIRST",
-    text: "We're UBC's most tightknit student social club. Everyone who walks in gets a seat at the table.",
+    text: "Everyone who walks in gets a seat.",
   },
   {
     title: "ALL VIBES, NO DRAMA",
-    text: "Good energy only. We show up to have fun and look out for each other.",
+    text: "We're here to have fun and look out for each other.",
   },
   {
     title: "OPEN DOORS",
-    text: "Our socials welcome members and non-members alike. Bring a friend, make a few more.",
+    text: "Members and non-members are both welcome at our socials. Bring a friend.",
   },
   {
     title: "MORE THAN JUST A CLUB",
-    text: "Events are the excuse. The lifelong friendships and the group chats are the point.",
+    text: "The events are just the excuse. You come for the friends and the group chats.",
   },
 ];
 

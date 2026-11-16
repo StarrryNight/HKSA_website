@@ -45,7 +45,7 @@ const events: Event[] = ([
     title: "NO NET NOVEMBER",
     sortDate: "2026-11-15",
     date: "NOV 2026",
-    prospective: true,
+    image: "/no_net_november_2026.webp",
   },
   {
     id: 4,
@@ -81,7 +81,6 @@ export function Events() {
             <h2 className="text-5xl md:text-7xl font-black tracking-tight">
               <span className="text-bauhinia">EVENTS</span>
             </h2>
-            <p className="text-xl text-stone mt-4 font-light">Where we turn up</p>
           </div>
         </motion.div>
 

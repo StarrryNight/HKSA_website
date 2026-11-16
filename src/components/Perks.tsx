@@ -10,19 +10,19 @@ const perks = [
     category: "EVENTS",
     icon: Ticket,
     title: "10+ Events All Year",
-    deal: "Free & discounted entry to parties, competitions, sports, and more throughout the year",
+    deal: "Free or discounted entry to our parties, competitions and sports nights",
   },
   {
     category: "MEMBERSHIP",
     icon: CreditCard,
     title: "Membership Card",
-    deal: "Claim your HKSA card at AMS Clubs Fair — includes stickers and freebies",
+    deal: "Pick up your card at the AMS Clubs Fair, plus some stickers and freebies",
   },
   {
     category: "DISCOUNTS",
     icon: Tag,
     title: "Member Deals",
-    deal: "Exclusive discounts at our 2026/27 sponsors, listed below",
+    deal: "Discounts at this year's sponsors, listed below",
   },
 ];
 

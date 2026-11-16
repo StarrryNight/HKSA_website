@@ -150,7 +150,6 @@ export function VibesGallery() {
               <h2 className="text-5xl md:text-7xl font-black tracking-tight">
                 <span className="text-bauhinia">MEMORIES</span>
               </h2>
-              <p className="text-xl text-stone mt-4 font-light">See what we're about</p>
             </div>
           </motion.div>
 

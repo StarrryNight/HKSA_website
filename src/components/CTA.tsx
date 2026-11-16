@@ -72,7 +72,7 @@ export function CTA() {
             <div>
               <p className="text-bauhinia text-xs tracking-widest font-bold mb-3">FOR STUDENTS</p>
               <p className="text-lg md:text-xl text-stone font-light">
-                Join UBC's most tightknit student social club. All vibes, no drama.
+                Join HKSA for the year. $13 gets you in.
               </p>
             </div>
             <motion.a
@@ -99,7 +99,7 @@ export function CTA() {
             <div>
               <p className="text-white/60 text-xs tracking-widest font-bold mb-3">FOR BUSINESSES</p>
               <p className="text-lg md:text-xl text-stone font-light">
-                Put your brand in front of one of UBC's biggest social clubs. Real publicity, real students, all year long.
+                Want your business in front of UBC students? Sponsor us and we'll promote you all year.
               </p>
             </div>
             <SponsorButton className="inline-block w-full md:w-auto px-8 md:px-12 py-4 border-2 border-stark bg-transparent text-white text-lg tracking-widest font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-300">
