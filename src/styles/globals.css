@@ -83,6 +83,7 @@
 .snap-section {
   min-height: 100vh;
   min-height: 100svh;
+  min-height: 100dvh;
 }
 
 @media (max-width: 767px) {
@@ -183,3 +184,16 @@
 /* Avoid font-swap layout shift: hidden until fonts are ready (see main.tsx) */
 #root { transition: opacity 0.25s ease; }
 .fonts-loading #root { opacity: 0; }
+
+/* Hero photo: cover on desktop; on portrait phones show the whole group instead of a zoomed crop */
+.hero-photo {
+  background-size: cover;
+  background-position: center 65%;
+  background-repeat: no-repeat;
+}
+@media (max-width: 767px) {
+  .hero-photo {
+    background-size: 100% auto;
+    background-position: center 60%;
+  }
+}
