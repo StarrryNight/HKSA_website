@@ -5,7 +5,9 @@ import { SponsorButton } from "./SponsorButton";
 
 export function CTA() {
   return (
-    <section id="join" className="snap-section flex items-center py-16 md:py-12 px-6 relative overflow-hidden">
+    <section id="join" className="snap-section flex items-center pt-16 md:py-12 px-6 relative overflow-hidden"
+      style={{ minHeight: "100svh", paddingBottom: "max(4rem, env(safe-area-inset-bottom))" }}
+    >
       {/* Fixed Background Text */}
       <div 
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -38,7 +40,7 @@ export function CTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.5 }}
-                className="inline-block mr-4"
+                className="inline-block mx-2"
               >
                 {word}
               </motion.span>
@@ -51,7 +53,7 @@ export function CTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.15, duration: 0.5 }}
-                className="inline-block mr-4 text-bauhinia glow-red"
+                className="inline-block mx-2 text-bauhinia glow-red"
               >
                 {word}
               </motion.span>
