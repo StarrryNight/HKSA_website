@@ -47,10 +47,11 @@ export function Hero() {
         }}
       >
         <motion.div
-          className="hero-photo absolute inset-0"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             y: bgY,
             backgroundImage: `url('/hero_2026.webp')`,
+            backgroundPosition: 'center 65%',
             filter: 'brightness(0.45) contrast(1.15)',
           }}
         />
