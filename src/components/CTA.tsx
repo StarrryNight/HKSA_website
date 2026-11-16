@@ -5,8 +5,8 @@ import { SponsorButton } from "./SponsorButton";
 
 export function CTA() {
   return (
-    <section id="join" className="snap-section flex items-center pt-16 md:py-12 px-6 relative overflow-hidden"
-      style={{ minHeight: "100svh", paddingBottom: "max(4rem, env(safe-area-inset-bottom))" }}
+    <section id="join" className="snap-section flex items-center pt-16 md:pt-8 px-6 relative overflow-hidden"
+      style={{ minHeight: "100svh", paddingBottom: "max(2rem, env(safe-area-inset-bottom))" }}
     >
       {/* Fixed Background Text */}
       <div 
@@ -30,9 +30,9 @@ export function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-10 md:mb-8"
+          className="text-center mb-8 md:mb-6"
         >
-          <h2 className="text-5xl md:text-7xl font-black tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-black tracking-tight leading-[1.05]">
             {["READY", "TO"].map((word, i) => (
               <motion.span
                 key={word}
@@ -62,13 +62,13 @@ export function CTA() {
         </motion.div>
 
         {/* Member + sponsor, side by side */}
-        <div className="grid md:grid-cols-2 gap-6 mb-10 md:mb-8 text-center">
+        <div className="grid md:grid-cols-2 gap-6 mb-8 md:mb-6 text-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="border-2 border-bauhinia bg-white/5 p-6 md:p-8 flex flex-col items-center justify-between gap-6"
+            className="border-2 border-bauhinia bg-white/5 p-6 md:p-6 flex flex-col items-center justify-between gap-6"
             style={{ boxShadow: "0 0 24px rgba(204,0,0,0.25)" }}
           >
             <div>
@@ -96,7 +96,7 @@ export function CTA() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="border-2 border-stark bg-white/5 p-6 md:p-8 flex flex-col items-center justify-between gap-6"
+            className="border-2 border-stark bg-white/5 p-6 md:p-6 flex flex-col items-center justify-between gap-6"
           >
             <div>
               <p className="text-white/60 text-xs tracking-widest font-bold mb-3">FOR BUSINESSES</p>
@@ -116,9 +116,9 @@ export function CTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="border-t border-stark pt-8"
+          className="border-t border-stark pt-6"
         >
-          <p className="text-center text-stone text-sm tracking-widest mb-6">
+          <p className="text-center text-stone text-sm tracking-widest mb-4">
             CONNECT WITH US
           </p>
           
@@ -154,7 +154,7 @@ export function CTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-10 text-center"
+          className="mt-6 text-center"
         >
           <p className="text-stone text-sm">
             © 2026 Hong Kong Student Association, University of British Columbia
