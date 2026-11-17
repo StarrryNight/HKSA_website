@@ -1,30 +1,56 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
-// Lazy images and entrance animations shift the layout while a long smooth
-// scroll is in flight, so it can stall or land off-target. Re-aim until settled.
+// Custom scroll that re-reads the target every frame. Native smooth scroll fixes
+// its destination up front, so on first load (images still loading, layout
+// shifting) it can stall partway, e.g. in the Events section.
+let joinScrollCancel: (() => void) | null = null;
+
 function scrollToJoin() {
   const el = document.getElementById("join");
   if (!el) return;
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const target = () => el.getBoundingClientRect().top + window.scrollY;
-  window.scrollTo({ top: target(), behavior: reduce ? "auto" : "smooth" });
-  let tries = 0;
-  let last = -1;
-  const check = window.setInterval(() => {
-    tries++;
-    const y = window.scrollY;
-    const settled = Math.abs(y - last) < 1; // scroll has stopped moving
-    last = y;
-    if (settled) {
-      if (Math.abs(target() - y) > 4) {
-        window.scrollTo({ top: target(), behavior: "smooth" });
-      } else {
-        window.clearInterval(check);
-      }
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) {
+    window.scrollTo({ top: target(), behavior: "instant" as ScrollBehavior });
+    return;
+  }
+
+  joinScrollCancel?.();
+  const start = window.scrollY;
+  const t0 = performance.now();
+  const duration = Math.min(1800, Math.max(900, Math.abs(target() - start) * 0.25));
+  let raf = 0;
+
+  const stop = () => {
+    cancelAnimationFrame(raf);
+    window.removeEventListener("wheel", stop);
+    window.removeEventListener("touchstart", stop);
+    window.removeEventListener("keydown", stop);
+    joinScrollCancel = null;
+  };
+  joinScrollCancel = stop;
+  // Let the user take over
+  window.addEventListener("wheel", stop, { passive: true });
+  window.addEventListener("touchstart", stop, { passive: true });
+  window.addEventListener("keydown", stop);
+
+  const step = (now: number) => {
+    const p = Math.min(1, (now - t0) / duration);
+    const eased = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+    const dest = target();
+    window.scrollTo({ top: start + (dest - start) * eased, behavior: "instant" as ScrollBehavior });
+    if (p < 1) {
+      raf = requestAnimationFrame(step);
+    } else {
+      // Final pass: land exactly, even if the layout moved during the last frames
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: target(), behavior: "instant" as ScrollBehavior });
+        stop();
+      });
     }
-    if (tries >= 12) window.clearInterval(check);
-  }, 400);
+  };
+  raf = requestAnimationFrame(step);
 }
 
 export function Hero() {
